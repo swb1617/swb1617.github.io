@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Appium环境搭建</title>
-    <url>/2021/12/28/Appium/</url>
-    <content><![CDATA[<h4 id="PS-此篇仅供于搭建安卓手机的自动化测试环境"><a href="#PS-此篇仅供于搭建安卓手机的自动化测试环境" class="headerlink" title="PS:此篇仅供于搭建安卓手机的自动化测试环境"></a>PS:此篇仅供于搭建安卓手机的自动化测试环境</h4><h4 id="Tips：Windows系统需配置对应的环境变量！！！"><a href="#Tips：Windows系统需配置对应的环境变量！！！" class="headerlink" title="Tips：Windows系统需配置对应的环境变量！！！"></a>Tips：Windows系统需配置对应的环境变量！！！</h4><h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><h3 id="1、安装JDK"><a href="#1、安装JDK" class="headerlink" title="1、安装JDK"></a>1、安装JDK</h3><p>在JAVA官网下载JDK的安装包<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">点击访问</a></p>
-<h3 id="2、安装SDK"><a href="#2、安装SDK" class="headerlink" title="2、安装SDK"></a>2、安装SDK</h3><p>下载最新版<a href="https://developer.android.google.cn/studio/">ANDROID STUDIO</a></p>
-<h3 id="3、安装node-js"><a href="#3、安装node-js" class="headerlink" title="3、安装node.js"></a>3、安装node.js</h3><p>1、Node.js简介<br>简单的说 Node.js 就是运行在服务端的 JavaScript。Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。</p>
-<p>2、下载Node.js<br>打开官网下载链接:<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a> 我这里下载的是node-v6.9.2-x64.msi</p>
-<img src="/2021/12/28/Appium/1.png" class>
-
-<p>3、下载完成后，双击“node-v6.9.2-x64.msi”，开始安装Node.js</p>
-<p>4、点击下一步默认安装<br>至此Node.js已经安装完成，可以先进行下简单的测试安装是否成功了，后面还要进行环境配置<br>在键盘按下【win+R】键，输入cmd，然后回车，打开cmd窗口<br>输入node -v</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
-<p>如果显示对应版本即安装成功<br>输入npm -v</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
-<p>如果显示对应版本即自带的npm也安装成功<br>我这里下载的是node-v6.9.2-x64.msi</p>
-<img src="/2021/12/28/Appium/2.png" class>
-
-<h3 id="4、安装appium"><a href="#4、安装appium" class="headerlink" title="4、安装appium"></a>4、安装appium</h3><p>打开Appium官网<a href="http://appium.io/">点击进入</a>点击下载对应版本即可<br>安装完成后配置环境变量，将路径X:\Program Files (x86)\Appium\node_modu<br>les.bin添加到环境变量path中去</p>
-<h3 id="5、安装appium-doctor"><a href="#5、安装appium-doctor" class="headerlink" title="5、安装appium-doctor"></a>5、安装appium-doctor</h3><p>cmd下执行命令npm install -g appium-doctor：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g appium-doctor</span><br></pre></td></tr></table></figure>
-<p>安装appium-doctor后，运行appium-doctor检测环境是否缺少！！</p>
-<img src="/2021/12/28/Appium/3.png" class>
-
-]]></content>
-      <tags>
-        <tag>自动化测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Jenkins部署Docker</title>
     <url>/2021/12/28/Jenkins/</url>
     <content><![CDATA[<h2 id="Docker安装Jenkins最新版本"><a href="#Docker安装Jenkins最新版本" class="headerlink" title="Docker安装Jenkins最新版本"></a>Docker安装Jenkins最新版本</h2><h4 id="1-Pull一个jenkins镜像这个是安装最新版的jenkins-如果安装旧版本，很多插件安装不上，docker环境下升级又比较麻烦。"><a href="#1-Pull一个jenkins镜像这个是安装最新版的jenkins-如果安装旧版本，很多插件安装不上，docker环境下升级又比较麻烦。" class="headerlink" title="1.Pull一个jenkins镜像这个是安装最新版的jenkins,如果安装旧版本，很多插件安装不上，docker环境下升级又比较麻烦。"></a>1.Pull一个jenkins镜像这个是安装最新版的jenkins,如果安装旧版本，很多插件安装不上，docker环境下升级又比较麻烦。</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker pull jenkins/jenkins:lts</span><br></pre></td></tr></table></figure>
@@ -93,6 +65,42 @@
 ]]></content>
       <tags>
         <tag>Linux, 命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Personal Profile</title>
+    <url>/2021/12/28/hello-world/</url>
+    <content><![CDATA[<h1 id="石文斌"><a href="#石文斌" class="headerlink" title="石文斌"></a>石文斌</h1>]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Appium环境搭建</title>
+    <url>/2021/12/28/Appium/</url>
+    <content><![CDATA[<h4 id="PS-此篇仅供于搭建安卓手机的自动化测试环境"><a href="#PS-此篇仅供于搭建安卓手机的自动化测试环境" class="headerlink" title="PS:此篇仅供于搭建安卓手机的自动化测试环境"></a>PS:此篇仅供于搭建安卓手机的自动化测试环境</h4><h4 id="Tips：Windows系统需配置对应的环境变量！！！"><a href="#Tips：Windows系统需配置对应的环境变量！！！" class="headerlink" title="Tips：Windows系统需配置对应的环境变量！！！"></a>Tips：Windows系统需配置对应的环境变量！！！</h4><h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><h3 id="1、安装JDK"><a href="#1、安装JDK" class="headerlink" title="1、安装JDK"></a>1、安装JDK</h3><p>在JAVA官网下载JDK的安装包<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">点击访问</a></p>
+<h3 id="2、安装SDK"><a href="#2、安装SDK" class="headerlink" title="2、安装SDK"></a>2、安装SDK</h3><p>下载最新版<a href="https://developer.android.google.cn/studio/">ANDROID STUDIO</a></p>
+<h3 id="3、安装node-js"><a href="#3、安装node-js" class="headerlink" title="3、安装node.js"></a>3、安装node.js</h3><p>1、Node.js简介<br>简单的说 Node.js 就是运行在服务端的 JavaScript。Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。</p>
+<p>2、下载Node.js<br>打开官网下载链接:<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a> 我这里下载的是node-v6.9.2-x64.msi</p>
+<img src="/2021/12/28/Appium/1.png" class>
+
+<p>3、下载完成后，双击“node-v6.9.2-x64.msi”，开始安装Node.js</p>
+<p>4、点击下一步默认安装<br>至此Node.js已经安装完成，可以先进行下简单的测试安装是否成功了，后面还要进行环境配置<br>在键盘按下【win+R】键，输入cmd，然后回车，打开cmd窗口<br>输入node -v</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
+<p>如果显示对应版本即安装成功<br>输入npm -v</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+<p>如果显示对应版本即自带的npm也安装成功<br>我这里下载的是node-v6.9.2-x64.msi</p>
+<img src="/2021/12/28/Appium/2.png" class>
+
+<h3 id="4、安装appium"><a href="#4、安装appium" class="headerlink" title="4、安装appium"></a>4、安装appium</h3><p>打开Appium官网<a href="http://appium.io/">点击进入</a>点击下载对应版本即可<br>安装完成后配置环境变量，将路径X:\Program Files (x86)\Appium\node_modu<br>les.bin添加到环境变量path中去</p>
+<h3 id="5、安装appium-doctor"><a href="#5、安装appium-doctor" class="headerlink" title="5、安装appium-doctor"></a>5、安装appium-doctor</h3><p>cmd下执行命令npm install -g appium-doctor：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g appium-doctor</span><br></pre></td></tr></table></figure>
+<p>安装appium-doctor后，运行appium-doctor检测环境是否缺少！！</p>
+<img src="/2021/12/28/Appium/3.png" class>
+
+]]></content>
+      <tags>
+        <tag>自动化测试</tag>
       </tags>
   </entry>
 </search>
