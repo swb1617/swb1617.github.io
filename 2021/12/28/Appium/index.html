@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Appium环境搭建 - 漫漫路</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="智者不入爱河,PS:此篇仅供于搭建安卓手机的自动化测试环境
+Tips：Windows系统需配置对应的环境变量！！！
+一、环境搭建
+1、安装JDK
+在JAVA官网下载JDK的安装包点击访问
+2、安装SDK
+下载最新,"> 
+    <meta name="author" content="石文斌"> 
+    <link rel="alternative" href="atom.xml" title="漫漫路" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Appium环境搭建 - 漫漫路"/>
+    <meta name="twitter:description" content="智者不入爱河,PS:此篇仅供于搭建安卓手机的自动化测试环境
+Tips：Windows系统需配置对应的环境变量！！！
+一、环境搭建
+1、安装JDK
+在JAVA官网下载JDK的安装包点击访问
+2、安装SDK
+下载最新,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="漫漫路"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="Appium环境搭建 - 漫漫路"/>
+    <meta property="og:description" content="智者不入爱河,PS:此篇仅供于搭建安卓手机的自动化测试环境
+Tips：Windows系统需配置对应的环境变量！！！
+一、环境搭建
+1、安装JDK
+在JAVA官网下载JDK的安装包点击访问
+2、安装SDK
+下载最新,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">漫漫路</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Appium环境搭建</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Appium环境搭建</h1>
+        <div class="stuff">
+            <span>十二月 28, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" rel="tag">自动化测试</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h4 id="ps此篇仅供于搭建安卓手机的自动化测试环境">PS:此篇仅供于搭建安卓手机的自动化测试环境</h4>
+<h4 id="tipswindows系统需配置对应的环境变量">Tips：Windows系统需配置对应的环境变量！！！</h4>
+<h2 id="一环境搭建">一、环境搭建</h2>
+<h3 id="安装jdk">1、安装JDK</h3>
+<p>在JAVA官网下载JDK的安装包<a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">点击访问</a></p>
+<h3 id="安装sdk">2、安装SDK</h3>
+<p>下载最新版<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/">ANDROID STUDIO</a></p>
+<h3 id="安装node.js">3、安装node.js</h3>
+<p>1、Node.js简介 简单的说 Node.js 就是运行在服务端的 JavaScript。Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。</p>
+<p>2、下载Node.js 打开官网下载链接:https://nodejs.org/en/download/ 我这里下载的是node-v6.9.2-x64.msi <img src="/2021/12/28/Appium/1.png" class></p>
+<p>3、下载完成后，双击“node-v6.9.2-x64.msi”，开始安装Node.js</p>
+<p>4、点击下一步默认安装 至此Node.js已经安装完成，可以先进行下简单的测试安装是否成功了，后面还要进行环境配置 在键盘按下【win+R】键，输入cmd，然后回车，打开cmd窗口 输入node -v <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure> 如果显示对应版本即安装成功 输入npm -v <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure> 如果显示对应版本即自带的npm也安装成功 我这里下载的是node-v6.9.2-x64.msi <img src="/2021/12/28/Appium/2.png" class></p>
+<h3 id="安装appium">4、安装appium</h3>
+<p>打开Appium官网<a target="_blank" rel="noopener" href="http://appium.io/">点击进入</a>点击下载对应版本即可 安装完成后配置环境变量，将路径X:Files (x86)_modu les.bin添加到环境变量path中去</p>
+<h3 id="安装appium-doctor">5、安装appium-doctor</h3>
+<p>cmd下执行命令npm install -g appium-doctor： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g appium-doctor</span><br></pre></td></tr></table></figure> 安装appium-doctor后，运行appium-doctor检测环境是否缺少！！ <img src="/2021/12/28/Appium/3.png" class></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="true"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class="side">
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#ps%E6%AD%A4%E7%AF%87%E4%BB%85%E4%BE%9B%E4%BA%8E%E6%90%AD%E5%BB%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">PS:此篇仅供于搭建安卓手机的自动化测试环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tipswindows%E7%B3%BB%E7%BB%9F%E9%9C%80%E9%85%8D%E7%BD%AE%E5%AF%B9%E5%BA%94%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">Tips：Windows系统需配置对应的环境变量！！！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number"></span> <span class="toc-text">一、环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85jdk"><span class="toc-number"></span> <span class="toc-text">1、安装JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85sdk"><span class="toc-number"></span> <span class="toc-text">2、安装SDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85node.js"><span class="toc-number"></span> <span class="toc-text">3、安装node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85appium"><span class="toc-number"></span> <span class="toc-text">4、安装appium</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85appium-doctor"><span class="toc-number"></span> <span class="toc-text">5、安装appium-doctor</span></a>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
