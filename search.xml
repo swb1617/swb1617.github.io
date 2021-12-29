@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Appetizer</title>
-    <url>/2021/12/29/Appetizer/</url>
-    <content><![CDATA[<h3 id="appetizerio简介">AppetizerIO简介</h3>
-<p>话不多说，AppetizerIO能干什么，<a href="https://www.appetizer.io/">下载地址</a>，<a href="https://www.notion.so/AppetizerIO-1383d971ded94388b8e76f3236fe1f4f">文档地址</a> <img src="/2021/12/29/Appetizer/1.png" class></p>
-<h4 id="坐下基本操作">坐下，基本操作</h4>
-<p>环境准备：手机（开发者模式打开USB调试），测试软件apk，adb</p>
-<h4 id="一连接手机">一，连接手机</h4>
-<h4 id="二对测试apk进行插桩">二，对测试APK进行插桩</h4>
-<img src="/2021/12/29/Appetizer/2.png" class>
-<h4 id="三把插桩后的apk安装到手机adb-install-.apk">三，把插桩后的APK安装到手机（adb install **.apk）</h4>
-<img src="/2021/12/29/Appetizer/3.png" class>
-<h4 id="四查看报告">四，查看报告</h4>
-<p>打看插桩后APP后，能找到这个了 <img src="/2021/12/29/Appetizer/4.png" class></p>
-<p>随便点2下然后点击上传数据就能在着软件上看报告了 <img src="/2021/12/29/Appetizer/5.png" class></p>
-<p>报告样例，还是蛮详细的</p>
-]]></content>
-      <tags>
-        <tag>自动化测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AppCrawler</title>
     <url>/2021/12/29/AppCrawler/</url>
     <content><![CDATA[<h4 id="appcrawler开源地址点击访问">AppCrawler开源地址：<a href="https://github.com/seveniruby/AppCrawler">点击访问</a></h4>
@@ -75,6 +54,30 @@
       </tags>
   </entry>
   <entry>
+    <title>Appium环境搭建</title>
+    <url>/2021/12/28/Appium/</url>
+    <content><![CDATA[<h4 id="ps此篇仅供于搭建安卓手机的自动化测试环境">PS:此篇仅供于搭建安卓手机的自动化测试环境</h4>
+<h4 id="tipswindows系统需配置对应的环境变量">Tips：Windows系统需配置对应的环境变量！！！</h4>
+<h2 id="一环境搭建">一、环境搭建</h2>
+<h3 id="安装jdk">1、安装JDK</h3>
+<p>在JAVA官网下载JDK的安装包<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">点击访问</a></p>
+<h3 id="安装sdk">2、安装SDK</h3>
+<p>下载最新版<a href="https://developer.android.google.cn/studio/">ANDROID STUDIO</a></p>
+<h3 id="安装node.js">3、安装node.js</h3>
+<p>1、Node.js简介 简单的说 Node.js 就是运行在服务端的 JavaScript。Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。</p>
+<p>2、下载Node.js 打开官网下载链接:https://nodejs.org/en/download/ 我这里下载的是node-v6.9.2-x64.msi <img src="/2021/12/28/Appium/1.png" class></p>
+<p>3、下载完成后，双击“node-v6.9.2-x64.msi”，开始安装Node.js</p>
+<p>4、点击下一步默认安装 至此Node.js已经安装完成，可以先进行下简单的测试安装是否成功了，后面还要进行环境配置 在键盘按下【win+R】键，输入cmd，然后回车，打开cmd窗口 输入node -v <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure> 如果显示对应版本即安装成功 输入npm -v <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure> 如果显示对应版本即自带的npm也安装成功 我这里下载的是node-v6.9.2-x64.msi <img src="/2021/12/28/Appium/2.png" class></p>
+<h3 id="安装appium">4、安装appium</h3>
+<p>打开Appium官网<a href="http://appium.io/">点击进入</a>点击下载对应版本即可 安装完成后配置环境变量，将路径X:Files (x86)_modu les.bin添加到环境变量path中去</p>
+<h3 id="安装appium-doctor">5、安装appium-doctor</h3>
+<p>cmd下执行命令npm install -g appium-doctor： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g appium-doctor</span><br></pre></td></tr></table></figure> 安装appium-doctor后，运行appium-doctor检测环境是否缺少！！ <img src="/2021/12/28/Appium/3.png" class></p>
+]]></content>
+      <tags>
+        <tag>自动化测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux相见恨晚的命令</title>
     <url>/2021/12/28/Linux/</url>
     <content><![CDATA[<h2 id="tldr命令手册">tldr（命令手册）</h2>
@@ -91,6 +94,36 @@
 ]]></content>
       <tags>
         <tag>Linux, 命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Personal Profile</title>
+    <url>/2021/12/28/hello-world/</url>
+    <content><![CDATA[<h1 id="石文斌">石文斌</h1>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Appetizer</title>
+    <url>/2021/12/29/Appetizer/</url>
+    <content><![CDATA[<h3 id="appetizerio简介">AppetizerIO简介</h3>
+<p>话不多说，AppetizerIO能干什么，<a href="https://www.appetizer.io/">下载地址</a>，<a href="https://www.notion.so/AppetizerIO-1383d971ded94388b8e76f3236fe1f4f">文档地址</a> <img src="/2021/12/29/Appetizer/1.png" class></p>
+<h4 id="坐下基本操作">坐下，基本操作</h4>
+<p>环境准备：手机（开发者模式打开USB调试），测试软件apk，adb</p>
+<h4 id="一连接手机">一，连接手机</h4>
+<h4 id="二对测试apk进行插桩">二，对测试APK进行插桩</h4>
+<img src="/2021/12/29/Appetizer/2.png" class>
+<h4 id="三把插桩后的apk安装到手机adb-install-.apk">三，把插桩后的APK安装到手机（adb install **.apk）</h4>
+<img src="/2021/12/29/Appetizer/3.png" class>
+<h4 id="四查看报告">四，查看报告</h4>
+<p>打看插桩后APP后，能找到这个了 <img src="/2021/12/29/Appetizer/4.png" class></p>
+<p>随便点2下然后点击上传数据就能在着软件上看报告了 <img src="/2021/12/29/Appetizer/5.png" class></p>
+<p>报告样例，还是蛮详细的</p>
+]]></content>
+      <tags>
+        <tag>自动化测试</tag>
       </tags>
   </entry>
   <entry>
@@ -122,39 +155,6 @@
 <h4 id="输入密码之后重启docker镜像">9.输入密码之后，重启docker镜像</h4>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker restart &#123;CONTAINER ID&#125;</span><br></pre></td></tr></table></figure>
 <img src="/2021/12/28/Jenkins/8.png" class>
-]]></content>
-      <tags>
-        <tag>自动化测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Personal Profile</title>
-    <url>/2021/12/28/hello-world/</url>
-    <content><![CDATA[<h1 id="石文斌">石文斌</h1>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Appium环境搭建</title>
-    <url>/2021/12/28/Appium/</url>
-    <content><![CDATA[<h4 id="ps此篇仅供于搭建安卓手机的自动化测试环境">PS:此篇仅供于搭建安卓手机的自动化测试环境</h4>
-<h4 id="tipswindows系统需配置对应的环境变量">Tips：Windows系统需配置对应的环境变量！！！</h4>
-<h2 id="一环境搭建">一、环境搭建</h2>
-<h3 id="安装jdk">1、安装JDK</h3>
-<p>在JAVA官网下载JDK的安装包<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">点击访问</a></p>
-<h3 id="安装sdk">2、安装SDK</h3>
-<p>下载最新版<a href="https://developer.android.google.cn/studio/">ANDROID STUDIO</a></p>
-<h3 id="安装node.js">3、安装node.js</h3>
-<p>1、Node.js简介 简单的说 Node.js 就是运行在服务端的 JavaScript。Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。</p>
-<p>2、下载Node.js 打开官网下载链接:https://nodejs.org/en/download/ 我这里下载的是node-v6.9.2-x64.msi <img src="/2021/12/28/Appium/1.png" class></p>
-<p>3、下载完成后，双击“node-v6.9.2-x64.msi”，开始安装Node.js</p>
-<p>4、点击下一步默认安装 至此Node.js已经安装完成，可以先进行下简单的测试安装是否成功了，后面还要进行环境配置 在键盘按下【win+R】键，输入cmd，然后回车，打开cmd窗口 输入node -v <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure> 如果显示对应版本即安装成功 输入npm -v <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure> 如果显示对应版本即自带的npm也安装成功 我这里下载的是node-v6.9.2-x64.msi <img src="/2021/12/28/Appium/2.png" class></p>
-<h3 id="安装appium">4、安装appium</h3>
-<p>打开Appium官网<a href="http://appium.io/">点击进入</a>点击下载对应版本即可 安装完成后配置环境变量，将路径X:Files (x86)_modu les.bin添加到环境变量path中去</p>
-<h3 id="安装appium-doctor">5、安装appium-doctor</h3>
-<p>cmd下执行命令npm install -g appium-doctor： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g appium-doctor</span><br></pre></td></tr></table></figure> 安装appium-doctor后，运行appium-doctor检测环境是否缺少！！ <img src="/2021/12/28/Appium/3.png" class></p>
 ]]></content>
       <tags>
         <tag>自动化测试</tag>
