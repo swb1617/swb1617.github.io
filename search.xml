@@ -1,76 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Jenkins部署Docker</title>
-    <url>/2021/12/28/Jenkins/</url>
-    <content><![CDATA[<h2 id="Docker安装Jenkins最新版本"><a href="#Docker安装Jenkins最新版本" class="headerlink" title="Docker安装Jenkins最新版本"></a>Docker安装Jenkins最新版本</h2><h4 id="1-Pull一个jenkins镜像这个是安装最新版的jenkins-如果安装旧版本，很多插件安装不上，docker环境下升级又比较麻烦。"><a href="#1-Pull一个jenkins镜像这个是安装最新版的jenkins-如果安装旧版本，很多插件安装不上，docker环境下升级又比较麻烦。" class="headerlink" title="1.Pull一个jenkins镜像这个是安装最新版的jenkins,如果安装旧版本，很多插件安装不上，docker环境下升级又比较麻烦。"></a>1.Pull一个jenkins镜像这个是安装最新版的jenkins,如果安装旧版本，很多插件安装不上，docker环境下升级又比较麻烦。</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker pull jenkins/jenkins:lts</span><br></pre></td></tr></table></figure>
-<img src="/2021/12/28/Jenkins/1.png" class>
-
-<h4 id="2-查看已经安装的jenkins镜像"><a href="#2-查看已经安装的jenkins镜像" class="headerlink" title="2.查看已经安装的jenkins镜像;"></a>2.查看已经安装的jenkins镜像;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker images</span><br></pre></td></tr></table></figure>
-<img src="/2021/12/28/Jenkins/2.png" class>
-
-<p>查看是否是最新版</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker inspect ba607c18aeb7</span><br></pre></td></tr></table></figure>
-<img src="/2021/12/28/Jenkins/3.png" class>
-
-<h4 id="3-创建一个jenkins目录"><a href="#3-创建一个jenkins目录" class="headerlink" title="3.创建一个jenkins目录;"></a>3.创建一个jenkins目录;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /home/jenkins_home</span><br></pre></td></tr></table></figure>
-<h4 id="4-启动一个jenkins容器"><a href="#4-启动一个jenkins容器" class="headerlink" title="4.启动一个jenkins容器 ;"></a>4.启动一个jenkins容器 ;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker run -d --name jenkins_01 -p 8081:8080 -v /home/jenkins_01:/home/jenkins_01 jenkins/jenkins:lts</span><br></pre></td></tr></table></figure>
-
-<img src="/2021/12/28/Jenkins/4.png" class>
-
-<h4 id="5-查看jenkins服务"><a href="#5-查看jenkins服务" class="headerlink" title="5.查看jenkins服务;"></a>5.查看jenkins服务;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker ps | grep jenkins</span><br></pre></td></tr></table></figure>
-<img src="/2021/12/28/Jenkins/5.png" class>
-
-<h4 id="6-启动服务端-localhost-8081"><a href="#6-启动服务端-localhost-8081" class="headerlink" title="6.启动服务端 localhost:8081"></a>6.启动服务端 localhost:8081</h4><img src="/2021/12/28/Jenkins/6.png" class>
-<h4 id="7-进入容器内部；"><a href="#7-进入容器内部；" class="headerlink" title="7.进入容器内部；"></a>7.进入容器内部；</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker <span class="built_in">exec</span> -it jenkins_01 bash</span><br></pre></td></tr></table></figure>
-<h4 id="8-执行：cat-得到密码并粘贴过去"><a href="#8-执行：cat-得到密码并粘贴过去" class="headerlink" title="8.执行：cat,得到密码并粘贴过去"></a>8.执行：cat,得到密码并粘贴过去</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /var/jenkins_home/secrets/initialAdminPassword</span><br></pre></td></tr></table></figure>
-
-<img src="/2021/12/28/Jenkins/7.png" class>
-
-<h4 id="9-输入密码之后，重启docker镜像"><a href="#9-输入密码之后，重启docker镜像" class="headerlink" title="9.输入密码之后，重启docker镜像"></a>9.输入密码之后，重启docker镜像</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker restart &#123;CONTAINER ID&#125;</span><br></pre></td></tr></table></figure>
-<img src="/2021/12/28/Jenkins/8.png" class>
-
-]]></content>
-      <tags>
-        <tag>自动化测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux相见恨晚的命令</title>
     <url>/2021/12/28/Linux/</url>
-    <content><![CDATA[<h2 id="tldr（命令手册）"><a href="#tldr（命令手册）" class="headerlink" title="tldr（命令手册）"></a>tldr（命令手册）</h2><p>作为一个伪开发人员，会时常用到终端命令，最让人头疼的是记不住繁琐的参数。用谷哥度娘检索效率低下；通过man查看帮助，超长文章不易阅读。</p>
+    <content><![CDATA[<h2 id="tldr命令手册">tldr（命令手册）</h2>
+<p>作为一个伪开发人员，会时常用到终端命令，最让人头疼的是记不住繁琐的参数。用谷哥度娘检索效率低下；通过man查看帮助，超长文章不易阅读。</p>
 <p>tldr命令正是解决这一痛点，tldr是什么？从它的 GitHub 页翻译说“一个简洁的社区驱动的帮助手册”，这是对它最好的解释，根据二八原则给出命令的常用场景示例，简单易读；存放在 Github 上的命令库接受来自五湖四海的朋友提交的内容，社区驱动。</p>
-<p>man命令有更详细的说明，单从实用角度讲，tldr才是王者。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fechinwork <span class="keyword">in</span> ~/Desktop at 11:57:57 λ tldr tar</span><br><span class="line"></span><br><span class="line">tar</span><br><span class="line"></span><br><span class="line">Archiving utility.</span><br><span class="line">Often combined with a compression method, such as gzip or bzip.</span><br><span class="line"></span><br><span class="line">- Create an archive from files:</span><br><span class="line">    tar cf target.tar file1 file2 file3</span><br><span class="line"></span><br><span class="line">- Create a gzipped archive:</span><br><span class="line">    tar czf target.tar.gz file1 file2 file3</span><br><span class="line"></span><br><span class="line">- Extract an archive <span class="keyword">in</span> a target folder:</span><br><span class="line">    tar xf source.tar -C folder</span><br><span class="line"></span><br><span class="line">- Extract a gzipped archive <span class="keyword">in</span> the current directory:</span><br><span class="line">    tar xzf source.tar.gz</span><br><span class="line"></span><br><span class="line">- Extract a bzipped archive <span class="keyword">in</span> the current directory:</span><br><span class="line">    tar xjf source.tar.bz2</span><br><span class="line"></span><br><span class="line">- Create a compressed archive, using archive suffix to determine the compression program:</span><br><span class="line">    tar caf target.tar.xz file1 file2 file3</span><br><span class="line"></span><br><span class="line">- List the contents of a tar file:</span><br><span class="line">    tar tvf source.tar</span><br></pre></td></tr></table></figure>
-<p>小提示：支持在进 20 中语言环境下运行，通过tldr –update更新本地命令库。</p>
-<p>tree（树形目录）<br>当我们编写项目文档，想更直观的表达项目结构及内容的时候，这个小小的命令就可以派上用场了，它以类似于图像的树状图排列目录和文件。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fechinwork <span class="keyword">in</span> ~/work/script/nginx2mysql at 12:43:10 λ tree -L 2</span><br><span class="line">.</span><br><span class="line">├── README.md</span><br><span class="line">├── config.yml</span><br><span class="line">├── libs</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── __init__.pyc</span><br><span class="line">│   ├── nginx_log_parser.py</span><br><span class="line">│   ├── nginx_log_parser.pyc</span><br><span class="line">│   ├── simplemysql.py</span><br><span class="line">│   └── simplemysql.pyc</span><br><span class="line">├── logs</span><br><span class="line">│   └── cdn-2016-06-04.log</span><br><span class="line">├── parser.py</span><br><span class="line">└── requirements.txt</span><br></pre></td></tr></table></figure>
-<p>2 directories, 11 files<br>小提示：支持定制层级，过滤内容等各种个性化设置。通过tldr tree查看具体使用示例。添加-N参数解决中文乱码问题。</p>
-<p>rlwrap（历史命令）<br>经常使用命令的同学一定有习惯，通过上下按键切换历史命令，但是让人头疼的是telnet命令不支持切换，甚至是退格删除，所以时常遇到如下尴尬场面。莫急，rlwrap便是用来解决这一痛点的。</p>
-<p>通过telnet执行 Dubbo 接口：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; telnet 192.168.1.147 23457</span><br><span class="line">&gt; invoke com.yinyuetai.yuan.user.api.UserService.get(1) &gt; ^[[A^[[A^[[A^[[B^[[B</span><br><span class="line"><span class="comment"># 好尴尬~</span></span><br></pre></td></tr></table></figure>
-<p>通过telnet连接 memcached 服务器：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; telnet 192.168.1.36 11211 &gt; ^[[A^[[A^[[A^[[B^[[B</span><br><span class="line"><span class="comment"># 好尴尬~</span></span><br></pre></td></tr></table></figure>
-<p>什么是rlwrap？它是基于 readline 库，实现命令行补全和记录的包装命令。如今交互式输入是最基本的需求，Linux 正是通过 readline 这个库来记录用户的操作，实现交互式输入、自动补全、搜索等功能。对于没有支持 readline 操作的命令，rlwrap就是最好的伙伴了。</p>
-<p>用法：在执行telnet命令前加上 rlwrap 命令即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fechinwork <span class="keyword">in</span> ~/Documents at 14:43:15 λ</span><br><span class="line">fechinwork <span class="keyword">in</span> ~/Documents at 14:43:41 λ rlwrap telnet 127.0.0.1 6379</span><br><span class="line">Trying 127.0.0.1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is <span class="string">&#x27;^]&#x27;</span>.</span><br><span class="line"><span class="built_in">set</span> product alpha</span><br><span class="line">+OK</span><br><span class="line">get prod</span><br><span class="line">$-1</span><br><span class="line">get product</span><br><span class="line"><span class="variable">$5</span></span><br><span class="line">alpha</span><br></pre></td></tr></table></figure>
-<p>小提示：除了telnet还有 Oracle 系列命令需要支持 rlwrap 包装装sqlplus、rman、asmcmd<br>快捷别名：alias telnet=’rlwrap telnet’</p>
-<p>script（记录会话输出）<br>很多时候，为了安全和备份，需要对工作内容进行保存。那么，script命令就是隐藏在终端的记录器，它可以记录终端会话的所有内容，形成文件。对于需要工作留痕的同学来说，script便是良药。<br>如何使用，用script启动它，此时它已经开始记录。完事后用exit退出记录，默认生成了一个叫“typescript”的文件。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:04 λ script</span><br><span class="line">Script started, output file is typescript</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:07 λ <span class="built_in">echo</span> <span class="string">&#x27;导演，开始了吗？&#x27;</span></span><br><span class="line">导演，开始了吗？</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:27 λ <span class="built_in">echo</span> <span class="string">&#x27;你退出自己看咯，略略~&#x27;</span></span><br><span class="line">你退出自己看咯，略略~</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:48 λ <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">Script <span class="keyword">done</span>, output file is typescript</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:51 λ cat typescript</span><br><span class="line">Script started on Sat Oct 21 13:34:06 2017</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:07 λ <span class="built_in">echo</span> <span class="string">&#x27;导演，开始了吗？&#x27;</span></span><br><span class="line">导演，开始了吗？</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:27 λ <span class="built_in">echo</span> <span class="string">&#x27;你退出自己看咯，略略~&#x27;</span></span><br><span class="line">你退出自己看咯，略略~</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:48 λ <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">Script <span class="keyword">done</span> on Sat Oct 21 13:34:51 2017</span><br></pre></td></tr></table></figure>
-<p>小提示：script可以在什么场景下使用呢？<br>1、我需要把大批量视频推送到 CDN，耗时一晚上，这时通过script记录执行的日志，第二天对没有推送成功的做单独处理。<br>2、别人远程你的服务器或电脑，安全起见script一下。<br>3、与同事协同工作时，自己工作做了一半，交给另一个人来做，此时发给它你的script，让它接着干。<br>……</p>
-<p>autojump（一键直达）<br>最后一个压轴神器，也是我用的最多的命令之一。</p>
-<p>相信多数终端用户使用频率最高的命令是cd、ls, 在我不知道切换到哪里的时候不得不ls确认目录名，如此反复，到达想去的目录可能要经历几次甚至十次以上的 cd，经历了多少风雨才找到我的文件。俗话说“不会偷懒的程序员不是好程序员”，如此饱受挫折那是我们的风格，于是有了 autojump 的诞生，它注定不凡。<br>顾名思义，autojump，自动跳转，而不是切换，因为它可以做到一键直达。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fechinwork <span class="keyword">in</span> ~/work/script/xls2sql at 14:27:24 λ j Des</span><br><span class="line">/Users/fechinwork/Desktop</span><br><span class="line">fechinwork <span class="keyword">in</span> ~/Desktop at 14:27:27 λ <span class="built_in">pwd</span></span><br><span class="line">/Users/fechinwork/Desktop</span><br><span class="line">fechinwork <span class="keyword">in</span> ~/Desktop at 14:27:31 λ j Docu</span><br><span class="line">/Users/fechinwork/Documents</span><br><span class="line">fechinwork <span class="keyword">in</span> ~/Documents at 14:27:41 λ <span class="built_in">pwd</span></span><br><span class="line">/Users/fechinwork/Documents</span><br><span class="line">fechinwork <span class="keyword">in</span> ~/Documents at 14:27:44 λ</span><br></pre></td></tr></table></figure>
-<p>小提示：可以通过j -s命令查看它的数据库，以及数据库中的目录权重。</p>
+<p>man命令有更详细的说明，单从实用角度讲，tldr才是王者。 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fechinwork <span class="keyword">in</span> ~/Desktop at 11:57:57 λ tldr tar</span><br><span class="line"></span><br><span class="line">tar</span><br><span class="line"></span><br><span class="line">Archiving utility.</span><br><span class="line">Often combined with a compression method, such as gzip or bzip.</span><br><span class="line"></span><br><span class="line">- Create an archive from files:</span><br><span class="line">    tar cf target.tar file1 file2 file3</span><br><span class="line"></span><br><span class="line">- Create a gzipped archive:</span><br><span class="line">    tar czf target.tar.gz file1 file2 file3</span><br><span class="line"></span><br><span class="line">- Extract an archive <span class="keyword">in</span> a target folder:</span><br><span class="line">    tar xf source.tar -C folder</span><br><span class="line"></span><br><span class="line">- Extract a gzipped archive <span class="keyword">in</span> the current directory:</span><br><span class="line">    tar xzf source.tar.gz</span><br><span class="line"></span><br><span class="line">- Extract a bzipped archive <span class="keyword">in</span> the current directory:</span><br><span class="line">    tar xjf source.tar.bz2</span><br><span class="line"></span><br><span class="line">- Create a compressed archive, using archive suffix to determine the compression program:</span><br><span class="line">    tar caf target.tar.xz file1 file2 file3</span><br><span class="line"></span><br><span class="line">- List the contents of a tar file:</span><br><span class="line">    tar tvf source.tar</span><br></pre></td></tr></table></figure> 小提示：支持在进 20 中语言环境下运行，通过tldr --update更新本地命令库。</p>
+<p>tree（树形目录） 当我们编写项目文档，想更直观的表达项目结构及内容的时候，这个小小的命令就可以派上用场了，它以类似于图像的树状图排列目录和文件。 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fechinwork <span class="keyword">in</span> ~/work/script/nginx2mysql at 12:43:10 λ tree -L 2</span><br><span class="line">.</span><br><span class="line">├── README.md</span><br><span class="line">├── config.yml</span><br><span class="line">├── libs</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── __init__.pyc</span><br><span class="line">│   ├── nginx_log_parser.py</span><br><span class="line">│   ├── nginx_log_parser.pyc</span><br><span class="line">│   ├── simplemysql.py</span><br><span class="line">│   └── simplemysql.pyc</span><br><span class="line">├── logs</span><br><span class="line">│   └── cdn-2016-06-04.log</span><br><span class="line">├── parser.py</span><br><span class="line">└── requirements.txt</span><br></pre></td></tr></table></figure> 2 directories, 11 files 小提示：支持定制层级，过滤内容等各种个性化设置。通过tldr tree查看具体使用示例。添加-N参数解决中文乱码问题。</p>
+<p>rlwrap（历史命令） 经常使用命令的同学一定有习惯，通过上下按键切换历史命令，但是让人头疼的是telnet命令不支持切换，甚至是退格删除，所以时常遇到如下尴尬场面。莫急，rlwrap便是用来解决这一痛点的。</p>
+<p>通过telnet执行 Dubbo 接口： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; telnet 192.168.1.147 23457</span><br><span class="line">&gt; invoke com.yinyuetai.yuan.user.api.UserService.get(1) &gt; ^[[A^[[A^[[A^[[B^[[B</span><br><span class="line"><span class="comment"># 好尴尬~</span></span><br></pre></td></tr></table></figure> 通过telnet连接 memcached 服务器： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; telnet 192.168.1.36 11211 &gt; ^[[A^[[A^[[A^[[B^[[B</span><br><span class="line"><span class="comment"># 好尴尬~</span></span><br></pre></td></tr></table></figure> 什么是rlwrap？它是基于 readline 库，实现命令行补全和记录的包装命令。如今交互式输入是最基本的需求，Linux 正是通过 readline 这个库来记录用户的操作，实现交互式输入、自动补全、搜索等功能。对于没有支持 readline 操作的命令，rlwrap就是最好的伙伴了。</p>
+<p>用法：在执行telnet命令前加上 rlwrap 命令即可。 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fechinwork <span class="keyword">in</span> ~/Documents at 14:43:15 λ</span><br><span class="line">fechinwork <span class="keyword">in</span> ~/Documents at 14:43:41 λ rlwrap telnet 127.0.0.1 6379</span><br><span class="line">Trying 127.0.0.1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is <span class="string">&#x27;^]&#x27;</span>.</span><br><span class="line"><span class="built_in">set</span> product alpha</span><br><span class="line">+OK</span><br><span class="line">get prod</span><br><span class="line">$-1</span><br><span class="line">get product</span><br><span class="line"><span class="variable">$5</span></span><br><span class="line">alpha</span><br></pre></td></tr></table></figure> 小提示：除了telnet还有 Oracle 系列命令需要支持 rlwrap 包装装sqlplus、rman、asmcmd 快捷别名：alias telnet='rlwrap telnet'</p>
+<p>script（记录会话输出） 很多时候，为了安全和备份，需要对工作内容进行保存。那么，script命令就是隐藏在终端的记录器，它可以记录终端会话的所有内容，形成文件。对于需要工作留痕的同学来说，script便是良药。 如何使用，用script启动它，此时它已经开始记录。完事后用exit退出记录，默认生成了一个叫“typescript”的文件。 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:04 λ script</span><br><span class="line">Script started, output file is typescript</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:07 λ <span class="built_in">echo</span> <span class="string">&#x27;导演，开始了吗？&#x27;</span></span><br><span class="line">导演，开始了吗？</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:27 λ <span class="built_in">echo</span> <span class="string">&#x27;你退出自己看咯，略略~&#x27;</span></span><br><span class="line">你退出自己看咯，略略~</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:48 λ <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">Script <span class="keyword">done</span>, output file is typescript</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:51 λ cat typescript</span><br><span class="line">Script started on Sat Oct 21 13:34:06 2017</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:07 λ <span class="built_in">echo</span> <span class="string">&#x27;导演，开始了吗？&#x27;</span></span><br><span class="line">导演，开始了吗？</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:27 λ <span class="built_in">echo</span> <span class="string">&#x27;你退出自己看咯，略略~&#x27;</span></span><br><span class="line">你退出自己看咯，略略~</span><br><span class="line">fechinwork <span class="keyword">in</span> ~ at 13:34:48 λ <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">Script <span class="keyword">done</span> on Sat Oct 21 13:34:51 2017</span><br></pre></td></tr></table></figure> 小提示：script可以在什么场景下使用呢？ 1、我需要把大批量视频推送到 CDN，耗时一晚上，这时通过script记录执行的日志，第二天对没有推送成功的做单独处理。 2、别人远程你的服务器或电脑，安全起见script一下。 3、与同事协同工作时，自己工作做了一半，交给另一个人来做，此时发给它你的script，让它接着干。 ……</p>
+<p>autojump（一键直达） 最后一个压轴神器，也是我用的最多的命令之一。</p>
+<p>相信多数终端用户使用频率最高的命令是cd、ls, 在我不知道切换到哪里的时候不得不ls确认目录名，如此反复，到达想去的目录可能要经历几次甚至十次以上的 cd，经历了多少风雨才找到我的文件。俗话说“不会偷懒的程序员不是好程序员”，如此饱受挫折那是我们的风格，于是有了 autojump 的诞生，它注定不凡。 顾名思义，autojump，自动跳转，而不是切换，因为它可以做到一键直达。 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fechinwork <span class="keyword">in</span> ~/work/script/xls2sql at 14:27:24 λ j Des</span><br><span class="line">/Users/fechinwork/Desktop</span><br><span class="line">fechinwork <span class="keyword">in</span> ~/Desktop at 14:27:27 λ <span class="built_in">pwd</span></span><br><span class="line">/Users/fechinwork/Desktop</span><br><span class="line">fechinwork <span class="keyword">in</span> ~/Desktop at 14:27:31 λ j Docu</span><br><span class="line">/Users/fechinwork/Documents</span><br><span class="line">fechinwork <span class="keyword">in</span> ~/Documents at 14:27:41 λ <span class="built_in">pwd</span></span><br><span class="line">/Users/fechinwork/Documents</span><br><span class="line">fechinwork <span class="keyword">in</span> ~/Documents at 14:27:44 λ</span><br></pre></td></tr></table></figure> 小提示：可以通过j -s命令查看它的数据库，以及数据库中的目录权重。</p>
 ]]></content>
       <tags>
         <tag>Linux, 命令</tag>
       </tags>
   </entry>
   <entry>
+    <title>Jenkins部署Docker</title>
+    <url>/2021/12/28/Jenkins/</url>
+    <content><![CDATA[<h2 id="docker安装jenkins最新版本">Docker安装Jenkins最新版本</h2>
+<h4 id="pull一个jenkins镜像这个是安装最新版的jenkins如果安装旧版本很多插件安装不上docker环境下升级又比较麻烦">1.Pull一个jenkins镜像这个是安装最新版的jenkins,如果安装旧版本，很多插件安装不上，docker环境下升级又比较麻烦。</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker pull jenkins/jenkins:lts</span><br></pre></td></tr></table></figure>
+<img src="/2021/12/28/Jenkins/1.png" class>
+<h4 id="查看已经安装的jenkins镜像">2.查看已经安装的jenkins镜像;</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker images</span><br></pre></td></tr></table></figure>
+<img src="/2021/12/28/Jenkins/2.png" class>
+<p>查看是否是最新版 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker inspect ba607c18aeb7</span><br></pre></td></tr></table></figure> <img src="/2021/12/28/Jenkins/3.png" class></p>
+<h4 id="创建一个jenkins目录">3.创建一个jenkins目录;</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /home/jenkins_home</span><br></pre></td></tr></table></figure>
+<h4 id="启动一个jenkins容器">4.启动一个jenkins容器 ;</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker run -d --name jenkins_01 -p 8081:8080 -v /home/jenkins_01:/home/jenkins_01 jenkins/jenkins:lts</span><br></pre></td></tr></table></figure>
+<img src="/2021/12/28/Jenkins/4.png" class>
+<h4 id="查看jenkins服务">5.查看jenkins服务;</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker ps | grep jenkins</span><br></pre></td></tr></table></figure>
+<img src="/2021/12/28/Jenkins/5.png" class>
+<h4 id="启动服务端-localhost8081">6.启动服务端 localhost:8081</h4>
+<img src="/2021/12/28/Jenkins/6.png" class>
+<h4 id="进入容器内部">7.进入容器内部；</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker <span class="built_in">exec</span> -it jenkins_01 bash</span><br></pre></td></tr></table></figure>
+<h4 id="执行cat得到密码并粘贴过去">8.执行：cat,得到密码并粘贴过去</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat /var/jenkins_home/secrets/initialAdminPassword</span><br></pre></td></tr></table></figure>
+<img src="/2021/12/28/Jenkins/7.png" class>
+<h4 id="输入密码之后重启docker镜像">9.输入密码之后，重启docker镜像</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker restart &#123;CONTAINER ID&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2021/12/28/Jenkins/8.png" class>
+]]></content>
+      <tags>
+        <tag>自动化测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Personal Profile</title>
     <url>/2021/12/28/hello-world/</url>
-    <content><![CDATA[<h1 id="石文斌"><a href="#石文斌" class="headerlink" title="石文斌"></a>石文斌</h1>]]></content>
+    <content><![CDATA[<h1 id="石文斌">石文斌</h1>
+]]></content>
       <tags>
         <tag>生活</tag>
       </tags>
@@ -78,26 +65,22 @@
   <entry>
     <title>Appium环境搭建</title>
     <url>/2021/12/28/Appium/</url>
-    <content><![CDATA[<h4 id="PS-此篇仅供于搭建安卓手机的自动化测试环境"><a href="#PS-此篇仅供于搭建安卓手机的自动化测试环境" class="headerlink" title="PS:此篇仅供于搭建安卓手机的自动化测试环境"></a>PS:此篇仅供于搭建安卓手机的自动化测试环境</h4><h4 id="Tips：Windows系统需配置对应的环境变量！！！"><a href="#Tips：Windows系统需配置对应的环境变量！！！" class="headerlink" title="Tips：Windows系统需配置对应的环境变量！！！"></a>Tips：Windows系统需配置对应的环境变量！！！</h4><h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><h3 id="1、安装JDK"><a href="#1、安装JDK" class="headerlink" title="1、安装JDK"></a>1、安装JDK</h3><p>在JAVA官网下载JDK的安装包<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">点击访问</a></p>
-<h3 id="2、安装SDK"><a href="#2、安装SDK" class="headerlink" title="2、安装SDK"></a>2、安装SDK</h3><p>下载最新版<a href="https://developer.android.google.cn/studio/">ANDROID STUDIO</a></p>
-<h3 id="3、安装node-js"><a href="#3、安装node-js" class="headerlink" title="3、安装node.js"></a>3、安装node.js</h3><p>1、Node.js简介<br>简单的说 Node.js 就是运行在服务端的 JavaScript。Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。</p>
-<p>2、下载Node.js<br>打开官网下载链接:<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a> 我这里下载的是node-v6.9.2-x64.msi</p>
-<img src="/2021/12/28/Appium/1.png" class>
-
+    <content><![CDATA[<h4 id="ps此篇仅供于搭建安卓手机的自动化测试环境">PS:此篇仅供于搭建安卓手机的自动化测试环境</h4>
+<h4 id="tipswindows系统需配置对应的环境变量">Tips：Windows系统需配置对应的环境变量！！！</h4>
+<h2 id="一环境搭建">一、环境搭建</h2>
+<h3 id="安装jdk">1、安装JDK</h3>
+<p>在JAVA官网下载JDK的安装包<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">点击访问</a></p>
+<h3 id="安装sdk">2、安装SDK</h3>
+<p>下载最新版<a href="https://developer.android.google.cn/studio/">ANDROID STUDIO</a></p>
+<h3 id="安装node.js">3、安装node.js</h3>
+<p>1、Node.js简介 简单的说 Node.js 就是运行在服务端的 JavaScript。Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。</p>
+<p>2、下载Node.js 打开官网下载链接:https://nodejs.org/en/download/ 我这里下载的是node-v6.9.2-x64.msi <img src="/2021/12/28/Appium/1.png" class></p>
 <p>3、下载完成后，双击“node-v6.9.2-x64.msi”，开始安装Node.js</p>
-<p>4、点击下一步默认安装<br>至此Node.js已经安装完成，可以先进行下简单的测试安装是否成功了，后面还要进行环境配置<br>在键盘按下【win+R】键，输入cmd，然后回车，打开cmd窗口<br>输入node -v</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
-<p>如果显示对应版本即安装成功<br>输入npm -v</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
-<p>如果显示对应版本即自带的npm也安装成功<br>我这里下载的是node-v6.9.2-x64.msi</p>
-<img src="/2021/12/28/Appium/2.png" class>
-
-<h3 id="4、安装appium"><a href="#4、安装appium" class="headerlink" title="4、安装appium"></a>4、安装appium</h3><p>打开Appium官网<a href="http://appium.io/">点击进入</a>点击下载对应版本即可<br>安装完成后配置环境变量，将路径X:\Program Files (x86)\Appium\node_modu<br>les.bin添加到环境变量path中去</p>
-<h3 id="5、安装appium-doctor"><a href="#5、安装appium-doctor" class="headerlink" title="5、安装appium-doctor"></a>5、安装appium-doctor</h3><p>cmd下执行命令npm install -g appium-doctor：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g appium-doctor</span><br></pre></td></tr></table></figure>
-<p>安装appium-doctor后，运行appium-doctor检测环境是否缺少！！</p>
-<img src="/2021/12/28/Appium/3.png" class>
-
+<p>4、点击下一步默认安装 至此Node.js已经安装完成，可以先进行下简单的测试安装是否成功了，后面还要进行环境配置 在键盘按下【win+R】键，输入cmd，然后回车，打开cmd窗口 输入node -v <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure> 如果显示对应版本即安装成功 输入npm -v <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure> 如果显示对应版本即自带的npm也安装成功 我这里下载的是node-v6.9.2-x64.msi <img src="/2021/12/28/Appium/2.png" class></p>
+<h3 id="安装appium">4、安装appium</h3>
+<p>打开Appium官网<a href="http://appium.io/">点击进入</a>点击下载对应版本即可 安装完成后配置环境变量，将路径X:Files (x86)_modu les.bin添加到环境变量path中去</p>
+<h3 id="安装appium-doctor">5、安装appium-doctor</h3>
+<p>cmd下执行命令npm install -g appium-doctor： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g appium-doctor</span><br></pre></td></tr></table></figure> 安装appium-doctor后，运行appium-doctor检测环境是否缺少！！ <img src="/2021/12/28/Appium/3.png" class></p>
 ]]></content>
       <tags>
         <tag>自动化测试</tag>
