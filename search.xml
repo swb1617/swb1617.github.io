@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AppCrawler</title>
+    <url>/2021/12/29/AppCrawler/</url>
+    <content><![CDATA[<h4 id="appcrawler开源地址点击访问">AppCrawler开源地址：<a href="https://github.com/seveniruby/AppCrawler">点击访问</a></h4>
+<h4 id="appcrawler基于appium开发底层引擎还引用了adb-macacaselenium">appcrawler基于appium开发，底层引擎还引用了adb、 macaca、selenium</h4>
+<h2 id="appcrawler安装">AppCrawler安装</h2>
+<p>AppCrawler工具以jar包方式发布，下载地址：<a href="https://pan.baidu.com/s/1dE0JDCH">点击访问</a></p>
+<p>appcrawler 2.4.0 java8 appium 1.8.x <img src="/2021/12/29/AppCrawler/1.png" class></p>
+<h2 id="appcrawler运行">AppCrawler运行</h2>
+<p>启动 appium server 启动模拟器或者连接真机 开始自动遍历 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">appcrawler --capability</span><br><span class="line">“appPackage=com.xueqiu.android,appActivity=.view.WelcomeActivity Alias”</span><br></pre></td></tr></table></figure> 使用AppCrawler前需要启动appium server，然后启动模拟器或者连接真机。运行 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> java -jar appcrawler.jar </span><br><span class="line"> ```查看帮助。</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">```bash</span><br><span class="line">D:\testing_tools\appcrawler&gt;java -jar appcrawler-2.4.0-jar-with-dependencies.jar</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Usage: appcrawler [options]</span><br><span class="line"></span><br><span class="line">  -a, --app &lt;value&gt;        Android或者iOS的文件地址, 可以是网络地址, 赋值给appium的app选项</span><br><span class="line">  -e, --encoding &lt;value&gt;   <span class="built_in">set</span> encoding, such as UTF-8 GBK</span><br><span class="line">  -c, --conf &lt;value&gt;       配置文件地址</span><br><span class="line">  -p, --platform &lt;value&gt;   平台类型android或者ios, 默认会根据app后缀名自动判断</span><br><span class="line">  -t, --maxTime &lt;value&gt;    最大运行时间. 单位为秒. 超过此值会退出. 默认最长运行3个小时</span><br><span class="line">  -u, --appium &lt;value&gt;     appium的url地址</span><br><span class="line">  -o, --output &lt;value&gt;     遍历结果的保存目录. 里面会存放遍历生成的截图, 思维导图和日志</span><br><span class="line">  --capability k1=v1,k2=v2...</span><br><span class="line">                           appium capability选项, 这个参数会覆盖-c指定的配置模板参数, 用于在模板配置之上的参数微调</span><br><span class="line">  -r, --report &lt;value&gt;     输出html和xml报告</span><br><span class="line">  --template &lt;value&gt;       输出代码模板</span><br><span class="line">  --master &lt;value&gt;         master的diff.yml文件地址</span><br><span class="line">  --candidate &lt;value&gt;      candidate环境的diff.yml文件</span><br><span class="line">  --diff                   执行diff对比</span><br><span class="line">  -vv, --verbose           是否展示更多debug信息</span><br><span class="line">  --demo                   生成demo配置文件学习使用方法</span><br><span class="line">  --<span class="built_in">help</span></span><br><span class="line">示例</span><br><span class="line">appcrawler -a xueqiu.apk</span><br><span class="line">appcrawler -a xueqiu.apk --capability noReset=<span class="literal">true</span></span><br><span class="line">appcrawler -c conf/xueqiu.json -p android -o result/</span><br><span class="line">appcrawler -c xueqiu.json --capability udid=[你的udid] -a Snowball.app</span><br><span class="line">appcrawler -c xueqiu.json -a Snowball.app -u 4730</span><br><span class="line">appcrawler -c xueqiu.json -a Snowball.app -u http://127.0.0.1:4730/wd/hub</span><br><span class="line"></span><br><span class="line">生成demo例子</span><br><span class="line">appcrawler --demo</span><br><span class="line"></span><br><span class="line">启动已经安装过的app</span><br><span class="line">appcrawler --capability <span class="string">&quot;appPackage=com.xueqiu.android,appActivity=.view.WelcomeActivityAlias&quot;</span></span><br><span class="line"></span><br><span class="line">从已经结束的结果中重新生成报告</span><br><span class="line"></span><br><span class="line">appcrawler --report result/</span><br><span class="line"></span><br><span class="line">新老版本对比</span><br><span class="line"></span><br><span class="line">appcrawler --candidate result/ --master pre/ --report ./</span><br></pre></td></tr></table></figure>
+<h2 id="生成样板配置示例">生成样板配置示例</h2>
+<p>运行 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar appcrawler.jar --demo</span><br></pre></td></tr></table></figure> 会在当前目录下生成一个demo.yml文件。</p>
+<p>执行参数与配置文件 capability设置：与 appium完全一致 <img src="/2021/12/29/AppCrawler/3.png" class></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">appPackage: <span class="string">&quot;com. xueqiu.android&quot;</span></span><br><span class="line">appActivity: <span class="string">&quot;.view.WelcomeActivityAlias&quot;</span></span><br><span class="line">app:</span><br><span class="line">appium: <span class="string">&quot;http: //127.0.0.1:4723/wd/hub&quot;</span></span><br><span class="line">noReset: <span class="literal">true</span></span><br><span class="line">automationName: uiautomator2</span><br><span class="line">dontStopAppOnReset: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<img src="/2021/12/29/AppCrawler/2.png" class>
+<p>testcase：用于启动app后的基础测试用例</p>
+<p>selectedList：设定遍历范围</p>
+<p>triggerActions：特定条件触发执行动作</p>
+<p>执行参数比配置文件优先级别高</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar &lt;appcrawler.jar路径&gt; -c example.yml --capability appPackage=com.xueqiu.android,appActivity=.view.WelcomeActivityAlias -o /tmp/xueqiu/</span><br></pre></td></tr></table></figure>
+<h2 id="testcase">testcase</h2>
+<p>testcase的完整形态</p>
+<p>·given：所有的先决条件 ·when：先决条件成立后的行为 ·then：断言集合</p>
+<p>testcase的简写形态</p>
+<p>·xpath：对应when里的 xpath ·action：对应when的 action</p>
+<img src="/2021/12/29/AppCrawler/4.png" class>
+<h2 id="action">action</h2>
+<p>·back 后退 ·backApp 回退到当前的app默认等价于back行为 可定制 ·monkey 随机事件 ·xxx()执行代码 ·Thread.sleep(3000) ·driver.swipe(0.9, 0.5,0.1,0.5) ·click ·longTap</p>
+<img src="/2021/12/29/AppCrawler/5.png" class>
+<h2 id="自动遍历定制">自动遍历定制</h2>
+<p>·selectedList：需要被遍历的元素范围 ·firstList：优先被点击 ·lastList：最后被点击 ·tagLimitMax：同祖先(同类型)的元素最多点击多少次 ·backButton：当所有元素都被点击后默认后退控件定位 ·blackList：黑名单 ·maxDepth：遍历的最大深度</p>
+<p>##触发器 triggerActions:</p>
+<p>·动作触发特定次数 ·通常用于处理弹框：关闭弹框 xpath：指定具体按钮 action：动作 times：规则的使用次数s</p>
+<h2 id="自动遍历测试过程">自动遍历测试过程</h2>
+<h3 id="信息的获取">信息的获取:</h3>
+<pre><code>把当前app的界面dump为xml结构</code></pre>
+<h3 id="获取待遍历元素">获取待遍历元素</h3>
+<pre><code>遍历范围 selectedList
+过滤黑名单 小控件 不可见控件 blackList
+重排控件顺序 firstList lastList
+跳过已点击+跳过限制点击的控件tagLimit
+根据匹配的规则执行 action
+循环上面的步骤</code></pre>
+<h2 id="网页报告">网页报告</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar appcrawler-2.4.0-jar-with-dependencies.jar -c demo1.yml</span><br></pre></td></tr></table></figure>
+<p>自动遍历执行完成后，当前目录会生成测试报告index.html <img src="/2021/12/29/AppCrawler/7.png" class></p>
+<p>打开index.html文件 <img src="/2021/12/29/AppCrawler/8.png" class></p>
+]]></content>
+      <tags>
+        <tag>自动化测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Appetizer</title>
+    <url>/2021/12/29/Appetizer/</url>
+    <content><![CDATA[<h3 id="appetizerio简介">AppetizerIO简介</h3>
+<p>话不多说，AppetizerIO能干什么，<a href="https://www.appetizer.io/">下载地址</a>，<a href="https://www.notion.so/AppetizerIO-1383d971ded94388b8e76f3236fe1f4f">文档地址</a> <img src="/2021/12/29/Appetizer/1.png" class></p>
+<h4 id="坐下基本操作">坐下，基本操作</h4>
+<p>环境准备：手机（开发者模式打开USB调试），测试软件apk，adb</p>
+<h4 id="一连接手机">一，连接手机</h4>
+<h4 id="二对测试apk进行插桩">二，对测试APK进行插桩</h4>
+<img src="/2021/12/29/Appetizer/2.png" class>
+<h4 id="三把插桩后的apk安装到手机adb-install-.apk">三，把插桩后的APK安装到手机（adb install **.apk）</h4>
+<img src="/2021/12/29/Appetizer/3.png" class>
+<h4 id="四查看报告">四，查看报告</h4>
+<p>打看插桩后APP后，能找到这个了 <img src="/2021/12/29/Appetizer/4.png" class></p>
+<p>随便点2下然后点击上传数据就能在着软件上看报告了 <img src="/2021/12/29/Appetizer/5.png" class></p>
+<p>报告样例，还是蛮详细的</p>
+]]></content>
+      <tags>
+        <tag>自动化测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Appium环境搭建</title>
     <url>/2021/12/28/Appium/</url>
     <content><![CDATA[<h4 id="ps此篇仅供于搭建安卓手机的自动化测试环境">PS:此篇仅供于搭建安卓手机的自动化测试环境</h4>
